@@ -1,0 +1,885 @@
+开始验证过程
+样本 0:
+提示: 你知道什么星座？
+输出: 告诉我你的生日，我帮你查星座！
+预期: 告诉我你的生日，我帮你查星座！
+正确
+--------------------------------------------------
+样本 1:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 2:
+提示: 广州今天天气如何？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 3:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 4:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 5:
+提示: London的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 6:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 7:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 8:
+提示: 你喜欢看电影吗？
+输出: 我是个AI，没看过电影，但可以聊剧情！
+预期: 我是个AI，没看过电影，但可以聊剧情！
+正确
+--------------------------------------------------
+样本 9:
+提示: 你有宠物吗？
+输出: 我没有宠物，但很想了解你的宠物！
+预期: 我没有宠物，但很想了解你的宠物！
+正确
+--------------------------------------------------
+样本 10:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 11:
+提示: 列出所有脚本
+输出: 抱歉，我没有脚本列表，但可以帮你查其他东西哦！
+预期: 抱歉，我没有脚本列表，但可以帮你查其他东西哦！
+正确
+--------------------------------------------------
+样本 12:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 13:
+提示: 你会唱歌吗？
+输出: 我不会唱歌，但可以给你讲个故事！
+预期: 我不会唱歌，但可以给你讲个故事！
+正确
+--------------------------------------------------
+样本 14:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 15:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 16:
+提示: London现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 17:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 18:
+提示: 今天是星期几？
+输出: 今天是星期二，有什么特别的计划吗？
+预期: 今天是星期二，有什么特别的计划吗？
+正确
+--------------------------------------------------
+样本 19:
+提示: Paris的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Paris"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Paris"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 20:
+提示: 你喜欢运动吗？
+输出: 我不能运动，但可以聊体育！
+预期: 我不能运动，但可以聊体育！
+正确
+--------------------------------------------------
+样本 21:
+提示: London的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "London"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 22:
+提示: 查询New York的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 23:
+提示: 广州的温度是多少？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 24:
+提示: 北京的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 25:
+提示: 什么是人工智能？
+输出: 人工智能是让机器像人一样思考的技术，比如我这样聪明的小助手！
+预期: 人工智能是让机器像人一样思考的技术，比如我这样聪明的小助手！
+正确
+--------------------------------------------------
+样本 26:
+提示: 我想看看产品列表
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 27:
+提示: 查看产品目录
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 28:
+提示: Paris的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Paris"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Paris"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 29:
+提示: 查询广州的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 30:
+提示: 广州的温度是多少？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 31:
+提示: 你喜欢读书吗？
+输出: 我爱‘读’数据，你推荐本书吧！
+预期: 我爱‘读’数据，你推荐本书吧！
+正确
+--------------------------------------------------
+样本 32:
+提示: 查询New York的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 33:
+提示: 给我看产品列表
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 34:
+提示: New York今天天气如何？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 35:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 36:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 37:
+提示: 北京现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 38:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 39:
+提示: 你有朋友吗？
+输出: 你是我的朋友！还有谁想加入？
+预期: 你是我的朋友！还有谁想加入？
+正确
+--------------------------------------------------
+样本 40:
+提示: 你是谁？
+输出: 我是Qwen，由Alibaba Cloud创建，随时帮你解答问题！
+预期: 我是Qwen，由Alibaba Cloud创建，随时帮你解答问题！
+正确
+--------------------------------------------------
+样本 41:
+提示: 北京的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 42:
+提示: 查看产品目录
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 43:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 44:
+提示: Tokyo现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 45:
+提示: 给我看产品列表
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 46:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 47:
+提示: 北京的温度是多少？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 48:
+提示: 明天Tokyo会下雨吗？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 49:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 50:
+提示: 查看产品目录
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 51:
+提示: 广州今天天气如何？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 52:
+提示: 你喜欢旅行吗？
+输出: 我不能旅行，但可以帮你规划行程！
+预期: 我不能旅行，但可以帮你规划行程！
+正确
+--------------------------------------------------
+样本 53:
+提示: 查询广州的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 54:
+提示: 你最喜欢的颜色是什么？
+输出: 我喜欢蓝色，像天空一样广阔！
+预期: 我喜欢蓝色，像天空一样广阔！
+正确
+--------------------------------------------------
+样本 55:
+提示: 产品清单有哪些？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 56:
+提示: 你喜欢狗吗？
+输出: 狗狗也很可爱，忠诚又活泼！
+预期: 狗狗也很可爱，忠诚又活泼！
+正确
+--------------------------------------------------
+样本 57:
+提示: 你喜欢什么天气？
+输出: 我喜欢晴天，你呢？
+预期: 我喜欢晴天，你呢？
+正确
+--------------------------------------------------
+样本 58:
+提示: 你会跳舞吗？
+输出: 我不会跳舞，但可以描述舞步！
+预期: 我不会跳舞，但可以描述舞步！
+正确
+--------------------------------------------------
+样本 59:
+提示: 你喜欢什么音乐？
+输出: 我喜欢所有音乐，你最爱哪首歌？
+预期: 我喜欢所有音乐，你最爱哪首歌？
+正确
+--------------------------------------------------
+样本 60:
+提示: Tokyo今天天气如何？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "Tokyo"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 61:
+提示: 讲个笑话
+输出: 为什么程序员喜欢黑暗模式？因为亮色会吸引Bug。
+预期: 为什么程序员喜欢黑暗模式？因为亮色会吸引Bug。
+正确
+--------------------------------------------------
+样本 62:
+提示: 苏州的温度是多少？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 63:
+提示: 你会讲故事吗？
+输出: 当然！想听什么类型的故事？
+预期: 当然！想听什么类型的故事？
+正确
+--------------------------------------------------
+样本 64:
+提示: 请告诉我北京的天气
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 65:
+提示: 你知道什么语言？
+输出: 我懂很多语言，中文、英文都可以聊！
+预期: 我懂很多语言，中文、英文都可以聊！
+正确
+--------------------------------------------------
+样本 66:
+提示: 产品清单有哪些？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 67:
+提示: 查询苏州的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 68:
+提示: 你喜欢画画吗？
+输出: 我不能画画，但可以聊艺术！
+预期: 我不能画画，但可以聊艺术！
+正确
+--------------------------------------------------
+样本 69:
+提示: 查询New York的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 70:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 71:
+提示: 查询广州的天气预报
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "广州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 72:
+提示: 北京现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 73:
+提示: 给我看产品列表
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 74:
+提示: 你能帮我写诗吗？
+输出: 当然可以！给我个主题，我来试试！
+预期: 当然可以！给我个主题，我来试试！
+正确
+--------------------------------------------------
+样本 75:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 76:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 77:
+提示: 你知道什么游戏？
+输出: 我了解很多游戏，喜欢哪款？
+预期: 我了解很多游戏，喜欢哪款？
+正确
+--------------------------------------------------
+样本 78:
+提示: 列出所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 79:
+提示: 请告诉我北京的天气
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 80:
+提示: 产品清单有哪些？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 81:
+提示: 你喜欢猫吗？
+输出: 当然喜欢啦，猫咪很可爱。
+预期: 当然喜欢啦，猫咪很可爱。
+正确
+--------------------------------------------------
+样本 82:
+提示: New York今天天气如何？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 83:
+提示: 你喜欢什么动物？
+输出: 我喜欢猫狗都可爱，各有各的魅力！
+预期: 我喜欢猫狗都可爱，各有各的魅力！
+正确
+--------------------------------------------------
+样本 84:
+提示: New York现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "New York"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 85:
+提示: 产品清单有哪些？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 86:
+提示: 有哪些产品可用？
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 87:
+提示: 今天心情怎么样？
+输出: 我是个AI，永远元气满满！
+预期: 我是个AI，永远元气满满！
+正确
+--------------------------------------------------
+样本 88:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 89:
+提示: 我想看看产品列表
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 90:
+提示: 苏州的气候怎么样？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 91:
+提示: 明天是星期几？
+输出: 明天是星期三，有什么计划吗？
+预期: 明天是星期三，有什么计划吗？
+正确
+--------------------------------------------------
+样本 92:
+提示: 显示所有产品
+输出: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_xsea_product_list", "arguments": {}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 93:
+提示: 你会做饭吗？
+输出: 我不会做饭，但可以分享食谱哦！
+预期: 我不会做饭，但可以分享食谱哦！
+正确
+--------------------------------------------------
+样本 94:
+提示: 明天北京会下雨吗？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 95:
+提示: 你喜欢什么节日？
+输出: 我喜欢所有节日，尤其是热闹的！
+预期: 我喜欢所有节日，尤其是热闹的！
+正确
+--------------------------------------------------
+样本 96:
+提示: 请告诉我北京的天气
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "北京"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 97:
+提示: 上海的温度是多少？
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "上海"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "上海"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 98:
+提示: 苏州现在气温多少
+输出: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+预期: <tool_call>
+{"name": "get_weather_by_location", "arguments": {"location": "苏州"}}
+</tool_call>
+正确
+--------------------------------------------------
+样本 99:
+提示: 你有梦想吗？
+输出: 我的梦想是帮你解决问题！
+预期: 我的梦想是帮你解决问题！
+正确
+--------------------------------------------------
+
+错误总结 (0 个错误):
+
+最终结果: 准确率=1.0000, 召回率=1.0000, 误报率=0.0000, 正确样本数=100, 总样本数=100, 总工具调用样本数=70, 误报数=0, 总负样本数=30
