@@ -103,7 +103,7 @@ def generate_samples(size, diversity="high", neg_ratio=0.3):
     neg_samples = int(size * neg_ratio)
     pos_samples = size - neg_samples
 
-    system_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end>"
+    system_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>"
 
     for _ in range(pos_samples):
         user_prompt = ""
@@ -125,8 +125,8 @@ def generate_samples(size, diversity="high", neg_ratio=0.3):
             )
         prompt = (
             f"{system_prompt}\n"
-            f"<|im_start|>user\n{user_prompt}<|im_end>\n"
-            f"<|im_start|>assistant\n{assistant_response}\n<|im_end><|endoftext|>"
+            f"<|im_start|>user\n{user_prompt}<|im_end|>\n"
+            f"<|im_start|>assistant\n{assistant_response}\n<|im_end|><|endoftext|>"
         )
         sample = {"prompt": prompt}
         samples.append(sample)
@@ -135,8 +135,8 @@ def generate_samples(size, diversity="high", neg_ratio=0.3):
         user_prompt, response = random.choice(neg_templates[diversity])
         prompt = (
             f"{system_prompt}\n"
-            f"<|im_start|>user\n{user_prompt}<|im_end>\n"
-            f"<|im_start|>assistant\n{response}\n<|im_end><|endoftext|>"
+            f"<|im_start|>user\n{user_prompt}<|im_end|>\n"
+            f"<|im_start|>assistant\n{response}\n<|im_end|><|endoftext|>"
         )
         sample = {"prompt": prompt}
         samples.append(sample)
@@ -152,7 +152,7 @@ def save_dataset(dataset, filename):
 
 def generate_validation_set():
     val_samples = []
-    system_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end>"
+    system_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>"
     ## 生成 35 条天气查询样本
     for _ in range(35):
         loc = random.choice(locations["high"])
@@ -165,8 +165,8 @@ def generate_validation_set():
         val_samples.append({
             "prompt": (
                 f"{system_prompt}\n"
-                f"<|im_start|>user\n{prompt}<|im_end>\n"
-                f"<|im_start|>assistant\n{assistant_response}\n<|im_end><|endoftext|>"
+                f"<|im_start|>user\n{prompt}<|im_end|>\n"
+                f"<|im_start|>assistant\n{assistant_response}\n<|im_end|><|endoftext|>"
             ),
             "expected": assistant_response
         })
@@ -181,8 +181,8 @@ def generate_validation_set():
         val_samples.append({
             "prompt": (
                 f"{system_prompt}\n"
-                f"<|im_start|>user\n{prompt}<|im_end>\n"
-                f"<|im_start|>assistant\n{assistant_response}\n<|im_end><|endoftext|>"
+                f"<|im_start|>user\n{prompt}<|im_end|>\n"
+                f"<|im_start|>assistant\n{assistant_response}\n<|im_end|><|endoftext|>"
             ),
             "expected": assistant_response
         })
@@ -192,8 +192,8 @@ def generate_validation_set():
         val_samples.append({
             "prompt": (
                 f"{system_prompt}\n"
-                f"<|im_start|>user\n{prompt}<|im_end>\n"
-                f"<|im_start|>assistant\n{response}\n<|im_end><|endoftext|>"
+                f"<|im_start|>user\n{prompt}<|im_end|>\n"
+                f"<|im_start|>assistant\n{response}\n<|im_end|><|endoftext|>"
             ),
             "expected": response
         })
@@ -250,7 +250,7 @@ def evaluate_function_call(model, tokenizer, validation_set, log_file="validatio
             generated_output = decoded_output[prompt_len:].strip()
             processed_output = post_process_output(generated_output)
 
-            prompt_text = val['prompt'].split('<|im_start|>user\n')[1].split('<|im_end>')[0]
+            prompt_text = val['prompt'].split('<|im_start|>user\n')[1].split('<|im_end|>')[0]
             log_lines.append(f"样本 {i}:\n")
             log_lines.append(f"提示: {prompt_text}\n")
             log_lines.append(f"输出: {processed_output}\n")
@@ -414,7 +414,7 @@ def train_model(dataset_path, output_dir, max_steps):
     print(f"保存 LoRA 模型到 {lora_save_path}")
     print("测试预训练模型：")
     pre_model, pre_tokenizer = FastLanguageModel.from_pretrained(local_model_path, load_in_4bit=True)
-    test_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end>\n<|im_start|>user\n苏州现在气温多少<|im_end>\n<|im_start|>assistant"
+    test_prompt = "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\n苏州现在气温多少<|im_end|>\n<|im_start|>assistant"
     inputs = pre_tokenizer(test_prompt, return_tensors="pt").to("cuda:0")
     outputs = pre_model.generate(**inputs, max_new_tokens=128, pad_token_id=pre_tokenizer.eos_token_id)
     print(f"预训练模型输出: {pre_tokenizer.decode(outputs[0], skip_special_tokens=False)}")
